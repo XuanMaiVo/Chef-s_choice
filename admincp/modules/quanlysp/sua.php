@@ -1,0 +1,80 @@
+<?php
+    $sql_sua_sp = "SELECT * FROM sanpham WHERE id_sanpham='$_GET[idsanpham]'LIMIT 1";
+    $query_sua_sp = mysqli_query($mysqli, $sql_sua_sp);
+?>
+
+<p>Sửa sản phẩm</p>
+ <table style="border: 1px solid black; width: 50%; border-collapse: collapse;">
+<?php
+while($row = mysqli_fetch_array($query_sua_sp)){
+?>
+<form method="POST" action="/chef-choices/admincp/modules/quanlysp/xuly.php?idsanpham=<?php echo $row['id_sanpham']?>" enctype="multipart/form-data"><!--Đường dẫn trực tiếp-->
+  <tr>
+      <td>Tên sản phẩm</td>
+      <td><input type="text" value="<?php echo $row['tensanpham'] ?>" name="tensanpham" ></td>
+    </tr>
+
+    <tr>
+      <td >Mã sp</td>
+      <td><input type="text" value="<?php echo $row['masp'] ?>" name="masp" ></td>
+    </tr>
+
+    <tr>
+      <td >Giá sp</td>
+      <td><input type="text" value="<?php echo $row['giasp'] ?>" name="giasp" ></td>
+    </tr>
+
+    <tr>
+      <td >Số lượng</td>
+      <td><input type="text" value="<?php echo $row['soluong'] ?>" name="soluong" ></td>
+    </tr>
+
+    <tr>
+      <td >Hình ảnh</td>
+      <td><input type="file" name="hinhanh" ></td>
+      <td>
+        <input type="file" name="hinhanh">
+        <img src="/chef-choices/admincp/modules/quanlysp/uploads/<?php echo $row['hinhanh']; ?>" width="150px">
+      </td>
+    </tr>
+
+    <tr>
+      <td>Tóm tắt</td>
+      <td><textarea rows="10" width="100%" <?php echo $row['tomtat'] ?> name="tomtat" style="resize:none"></textarea></td>
+    </tr>
+
+    <tr>
+      <td>Nội dung</td>
+      <td><textarea rows="10" <?php echo $row['noidung'] ?> name="noidung"></textarea></td>
+    </tr>
+
+    <tr>
+      <td >Tình trạng</td>
+      <td>
+        <select name="tinhtrang">
+          <?php 
+          if($row['tinhtrang'] == 1) {
+          ?>
+          <option value="1" selected>Kích hoạt</option>
+          <option value="0">Ẩn</option>
+          <?php
+          }else{
+          ?>
+          <option value="1">Kích hoạt</option>
+          <option value="0" selected>Ẩn</option>
+          <?php
+          }
+          ?>
+        </select>
+      </td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td colspan="2"><input type="submit" name="suasanpham" value="Sửa sản phẩm"><!--nút--></td>
+    </tr>
+  </form>
+  <?php
+}
+  ?>
+  </table>
