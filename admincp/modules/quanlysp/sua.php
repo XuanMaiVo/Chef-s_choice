@@ -2,13 +2,12 @@
     $sql_sua_sp = "SELECT * FROM sanpham WHERE id_sanpham='$_GET[idsanpham]'LIMIT 1";
     $query_sua_sp = mysqli_query($mysqli, $sql_sua_sp);
 ?>
-
 <p>Sửa sản phẩm</p>
- <table style="border: 1px solid black; width: 50%; border-collapse: collapse;">
+<table style="border: 1px solid black; width: 50%; border-collapse: collapse;">
 <?php
 while($row = mysqli_fetch_array($query_sua_sp)){
 ?>
-<form method="POST" action="/chef-choices/admincp/modules/quanlysp/xuly.php?idsanpham=<?php echo $row['id_sanpham']?>" enctype="multipart/form-data"><!--Đường dẫn trực tiếp-->
+<form method="POST" action="/Chef-s_choice/admincp/modules/quanlysp/xuly.php?idsanpham=<?php echo $row['id_sanpham']?>" enctype="multipart/form-data"><!--Đường dẫn trực tiếp-->
   <tr>
       <td>Tên sản phẩm</td>
       <td><input type="text" value="<?php echo $row['tensanpham'] ?>" name="tensanpham" ></td>
@@ -31,21 +30,45 @@ while($row = mysqli_fetch_array($query_sua_sp)){
 
     <tr>
       <td >Hình ảnh</td>
-      <td><input type="file" name="hinhanh" ></td>
       <td>
         <input type="file" name="hinhanh">
-        <img src="/chef-choices/admincp/modules/quanlysp/uploads/<?php echo $row['hinhanh']; ?>" width="150px">
+        <img src="/Chef-s_choice/admincp/modules/quanlysp/uploads/<?php echo $row['hinhanh']; ?>" width="150px">
       </td>
     </tr>
 
     <tr>
       <td>Tóm tắt</td>
-      <td><textarea rows="10" width="100%" <?php echo $row['tomtat'] ?> name="tomtat" style="resize:none"></textarea></td>
+      <td><textarea rows="10" name="tomtat" style="resize:none"><?php echo $row['tomtat'] ?></textarea></td>
     </tr>
 
     <tr>
       <td>Nội dung</td>
       <td><textarea rows="10" <?php echo $row['noidung'] ?> name="noidung"></textarea></td>
+    </tr>
+
+<tr>
+      <td >Danh mục sản phẩm</td>
+      <td>
+        <select name="danhmuc">
+          <?php
+          $sql_danhmuc = "SELECT * FROM danhmuc ORDER BY id_danhmuc DESC";
+          $query_danhmuc = mysqli_query($mysqli,$sql_danhmuc);
+          while($row_danhmuc = mysqli_fetch_array($query_danhmuc)){
+            if($row_danhmuc['id_danhmuc']==$row['id_danhmuc']){
+            ?>
+            <option selected value="<?php echo $row_danhmuc['id_danhmuc'] ?>"> <?php echo $row_danhmuc['ten_danhmuc'] ?> 
+            </option>
+          <?php
+          }else{       
+          ?>
+            <option value="<?php echo $row_danhmuc['id_danhmuc'] ?>"> <?php echo $row_danhmuc['ten_danhmuc'] ?> 
+            </option>
+          <?php
+          }
+        }
+        ?>
+        </select>
+      </td>
     </tr>
 
     <tr>

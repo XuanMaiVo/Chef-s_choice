@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 29, 2025 lúc 05:49 PM
+-- Thời gian đã tạo: Th5 03, 2025 lúc 02:53 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.0.30
 
@@ -12,7 +12,10 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Cơ sở dữ liệu: `data`
@@ -43,6 +46,25 @@ CREATE TABLE `danhmuc` (
   `thutu` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `sanpham`
+--
+
+CREATE TABLE `sanpham` (
+  `id_sanpham` int(11) NOT NULL,
+  `tensanpham` varchar(100) NOT NULL,
+  `masp` varchar(100) NOT NULL,
+  `giasp` varchar(50) NOT NULL,
+  `soluong` int(11) NOT NULL,
+  `hinhanh` varchar(50) NOT NULL,
+  `tomtat` tinytext NOT NULL,
+  `noidung` text NOT NULL,
+  `tinhtrang` int(11) NOT NULL,
+  `id_danhmuc` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 --
 -- Chỉ mục cho các bảng đã đổ
 --
@@ -60,6 +82,12 @@ ALTER TABLE `danhmuc`
   ADD PRIMARY KEY (`id_danhmuc`);
 
 --
+-- Chỉ mục cho bảng `sanpham`
+--
+ALTER TABLE `sanpham`
+  ADD PRIMARY KEY (`id_sanpham`);
+
+--
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
@@ -74,6 +102,14 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `danhmuc`
   MODIFY `id_danhmuc` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `sanpham`
+--
+ALTER TABLE `sanpham`
+  MODIFY `id_sanpham` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
-
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
