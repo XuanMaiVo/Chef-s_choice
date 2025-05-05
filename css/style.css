@@ -197,3 +197,22 @@ p.footer_copyright {
 .clear {
     clear: both;
 }
+
+i.fa-solid.fa-plus {
+    font-size: 20px;
+    color: #000;
+}
+
+i.fa-solid.fa-minus {
+    font-size: 20px;
+    color: #000;
+}
+
+i.fa-solid.fa-plus:hover {
+    color: red;
+}
+
+i.fa-solid.fa-minus:hover {
+    font-size: 20px;
+    color: red;
+}
