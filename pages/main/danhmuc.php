@@ -8,7 +8,7 @@
 ?>
 <h3>Danh mục sản phẩm: <?php echo $row_title['ten_danhmuc']?> </h3><!-- nếu chưa có sản phẩm sẽ không hiện tên danh mục-->
     <ul class="product_list">
-        <?php
+        <?php 
             while($row_pro = mysqli_fetch_array($query_pro)){
         ?>
         <li>

@@ -64,12 +64,16 @@ ul.list_menu {
     margin: 0 auto;
     width: 60%;
     line-height: 27px;
+    display: flex;
+
+    align-items: center;
+
 }
 
 ul.list_menu li {
-    float: left;
     margin: 5px;
     padding: 5px;
+    float: none;
 
 }
 
@@ -81,6 +85,38 @@ ul.list_menu li a {
     text-decoration: none;
     text-align: center;
     color: black;
+}
+
+
+.search-item {
+    margin-left: auto;
+
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.search-form input[type="submit"] {
+    padding: 5px 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+.search-item:hover {
+    background: transparent !important;
 }
 
 #main {

@@ -1,4 +1,4 @@
-<!--trên video là index.php--> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +7,12 @@
     <link rel="stylesheet" type="text/css" href="../admin_css/admin.css">
     <title>Admin</title>
 </head>
+<?php
+    session_start();
+    if(!isset($_SESSION['dangnhap'])){
+        header("Location:/Chef-s_choice/admincp/modules/login.php");
+    }
+?>
 <body>
     <h3 class="title_admin">Welcome to Admin</h3>
     <div class="wrapper">

@@ -1,8 +1,10 @@
+<p>Giỏ hàng
 <?php
-    session_start();
-    
+  if(isset($_SESSION['dangky'])){
+    echo 'Xin chào: '.'<span style="color:blue">'.$_SESSION['dangky'].'</span>';
+  }
 ?>
-<p>Giỏ hàng</p>
+</p>
 <table style="width: 100%; text-align: center; border-collapse: collapse; border: 1px solid black;">
   <tr>
     <th>ID</th>
@@ -44,6 +46,18 @@
     <tr>
     <td colspan="8"><p style="float:left;">Tổng tiền:<?php echo number_format($tongtien,0,',','.').'VND'?></p><br/>
         <p style="float:right;"><a href="pages/main/themgiohang.php?xoatatca=1">Xóa tất cả</p>
+        <div style="clear: both;"></div>
+      <?php
+        if(isset($_SESSION['dangky'])){
+      ?>
+        <p><a href="index.php?quanly=thanhtoan">Đặt hàng</a></p>
+      <?php
+        }else {
+      ?>
+        <p><a href="index.php?quanly=dangky">Đăng ký để đặt hàng</a></p>
+    <?php
+       }
+?>    
 </td>
     </tr>
 <?php
@@ -57,6 +71,7 @@
   ?>
 </table>
     
+
 
 
 

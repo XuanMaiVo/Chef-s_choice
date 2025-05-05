@@ -10,6 +10,7 @@
 <body>
     <div class="wrapper">
         <?php
+        session_start();
             include("admincp/config/config.php");
             include("pages/header.php");
             include("pages/menu.php");

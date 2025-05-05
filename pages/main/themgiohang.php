@@ -52,6 +52,9 @@ if(isset($_GET['xoa']) && $_GET['xoa']){
         }
         
         $_SESSION['cart'] =$product;
+            if(empty($_SESSION['cart'])){
+            unset($_SESSION['cart']);
+    }
     } 
 }
 header('Location:../../index.php?quanly=giohang');
