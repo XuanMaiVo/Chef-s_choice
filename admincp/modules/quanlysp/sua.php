@@ -46,7 +46,7 @@ while($row = mysqli_fetch_array($query_sua_sp)){
       <td><textarea rows="10" <?php echo $row['noidung'] ?> name="noidung"></textarea></td>
     </tr>
 
-<tr>
+<tr> 
       <td >Danh mục sản phẩm</td>
       <td>
         <select name="danhmuc">

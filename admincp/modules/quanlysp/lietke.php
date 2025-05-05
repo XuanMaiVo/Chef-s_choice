@@ -1,4 +1,4 @@
-<!--để in ra màn hình-->
+<!--để in ra màn hình--> 
 <?php
     $sql_lietke_sp = "SELECT * FROM sanpham, danhmuc WHERE sanpham.id_danhmuc=danhmuc.id_danhmuc ORDER BY id_sanpham DESC";
     $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);

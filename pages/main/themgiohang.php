@@ -4,7 +4,7 @@ include('../../admincp/config/config.php');// kết nối database
 //thêm số lượng
 //trừ số lượng
 //xóa
-//thêm sản phẩm vào cart
+//thêm sản phẩm vào cart 
 if(isset($_POST['themgiohang'])){
         $id=$_GET['idsanpham'];
     $soluong=1;

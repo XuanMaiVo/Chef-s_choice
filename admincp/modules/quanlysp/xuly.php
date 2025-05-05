@@ -1,4 +1,4 @@
-<?php
+<?php 
 include('../../config/config.php');// kết nối database
 
 $tensanpham = $_POST['tensanpham'];

@@ -1,4 +1,4 @@
-<!--trên video là index.php-->
+<!--trên video là index.php--> 
 <!DOCTYPE html>
 <html lang="en">
 <head>

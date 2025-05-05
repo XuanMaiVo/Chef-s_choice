@@ -15,7 +15,7 @@
             <p style= "text-align: center; color:#d1d1d1"><?php echo $row['ten_danhmuc']?></p>
             </a>
         </li>
-        <?php
+        <?php 
             }
         ?>
     </ul>    

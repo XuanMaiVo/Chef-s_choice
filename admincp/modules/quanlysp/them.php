@@ -1,4 +1,4 @@
-<p>Thêm sản phẩm</p>
+<p>Thêm sản phẩm</p> 
  <table style="border: 1px solid black; width: 50%; border-collapse: collapse;">
 <form method="POST" action="/Chef-s_choice/admincp/modules/quanlysp/xuly.php" enctype="multipart/form-data"><!--Đường dẫn trực tiếp-->
   <tr>

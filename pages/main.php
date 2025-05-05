@@ -7,7 +7,7 @@
         if(isset($_GET['quanly'])){
             $tam = $_GET['quanly'];
         }else{
-            $tam = '';
+            $tam = ''; 
         }
         if($tam=='danhmucsanpham'){
             include("main/danhmuc.php");

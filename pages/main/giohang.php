@@ -8,4 +8,4 @@
         print_r($_SESSION['cart']);
         echo '</pre>';
     }
-?>
+?> 

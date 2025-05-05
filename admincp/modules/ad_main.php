@@ -1,7 +1,7 @@
 <!--trên video là main.php-->
 <div class="clear"></div>
 <div class="main">
-    <?php
+    <?php 
         if(isset($_GET['action']) && isset($_GET['query'])){
             $tam = $_GET['action'];
             $query =$_GET['query'];
