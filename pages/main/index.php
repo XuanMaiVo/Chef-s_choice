@@ -1,5 +1,15 @@
 <?php
-    $sql_pro = "SELECT * FROM sanpham, danhmuc WHERE sanpham.id_danhmuc= danhmuc.id_danhmuc ORDER BY sanpham.id_sanpham DESC LIMIT 25";
+    if(isset($_GET['trang'])){
+        $page=$_GET['trang'];
+    }else{
+        $page='1';
+    }
+    if($page==''|| $page==1){
+        $begin=0;
+    }else{
+        $begin=($page-1)*3;
+    }
+    $sql_pro = "SELECT * FROM sanpham, danhmuc WHERE sanpham.id_danhmuc= danhmuc.id_danhmuc ORDER BY sanpham.id_sanpham DESC LIMIT $begin,5";
     $query_pro = mysqli_query($mysqli,$sql_pro);
 ?>
 <h3>Sản phẩm mới nhất</h3>
@@ -18,4 +28,45 @@
         <?php 
             }
         ?>
-    </ul>    
+    </ul>
+    <div style="clear:both;"></div>
+    <style>
+        ul.list_trang{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+           
+            
+        }
+
+        ul.list_trang li{
+            float: left;
+            padding: 5px 13px;
+            margin: 5px;
+            background: burlywood;
+            
+        }
+
+        ul.list_trang li a{
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+    <p>Trang: </p>
+    <?php
+        $sql_trang=mysqli_query($mysqli,"SELECT * FROM sanpham");
+        $row_count=mysqli_num_rows($sql_trang);
+        $trang= ceil($row_count/3);
+    ?>
+        <ul class="list_trang">
+            <?php
+            for($i=1;$i<=$trang;$i++){
+            ?>
+            <li><a <?php if($i==$page){echo 'style="background:red"';}else{echo'';} ''?>href="index.php?trang=<?php echo $i ?>"><?php echo $i ?></a></li>
+            <?php
+            }
+            ?>
+        </ul>

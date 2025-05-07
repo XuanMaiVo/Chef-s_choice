@@ -30,7 +30,7 @@ if(isset($_GET['tru'])){
             $_SESSION['cart'] =$product;
         }else{
             $tangsoluong= $cart_item['soluong'] - 1;
-            if($cart_item['soluong']>1){//cho tối đa 10 sản phẩm
+            if($cart_item['soluong']>1){//tối thiểu 1 sản phẩm
                 
                 $product[]=array('tensanpham'=>$cart_item['tensanpham'],'id' => $cart_item['id'],'soluong' => $tangsoluong,'giasp'=>$cart_item['giasp'],'hinhanh'=>$cart_item['hinhanh'],'masp'=>$cart_item['masp']);
             }else{

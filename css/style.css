@@ -179,16 +179,15 @@ ul.product_list {
     padding: 0;
     margin: 0;
     list-style: none;
+    gap: 10px;
 }
 
 ul.product_list li {
     width: 19%;
-    /* hoặc 19.2% để tròn 5 cái nếu không có gap */
     border: 1px dashed black;
     background: #f2f2f2;
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 15px;
-    /* tạo khoảng cách giữa các hàng */
     display: flex;
     flex-direction: column;
 }

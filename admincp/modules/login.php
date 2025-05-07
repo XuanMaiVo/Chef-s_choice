@@ -3,7 +3,7 @@
     include('../../admincp/config/config.php');
     if(isset($_POST['dangnhap'])){
         $taikhoan=$_POST['username'];
-        $matkhau=$_POST['password'];
+        $matkhau=md5($_POST['password']);
         $sql="SELECT * FROM admin WHERE username='".$taikhoan."' AND password='".$matkhau."' LIMIT 1";
         $row=mysqli_query($mysqli,$sql);
         $count = mysqli_num_rows($row);

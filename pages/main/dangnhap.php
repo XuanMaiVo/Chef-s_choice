@@ -8,6 +8,7 @@
         if($count>0){
         $row_data=mysqli_fetch_array($row);
             $_SESSION['dangky']= $row_data['tenkhachhang'];
+            $_SESSION['id_khachhang']= $row_data['id_dangky'];
             header("Location:/Chef-s_choice/index.php?quanly=giohang");
         }else{
             echo '<p style="color:red">Tài khoản hoặc mật khẩu không đúng!</p>';

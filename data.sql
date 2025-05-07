@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 05, 2025 lúc 02:01 PM
+-- Thời gian đã tạo: Th5 07, 2025 lúc 01:20 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.0.30
 
@@ -39,7 +39,56 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`, `admin_status`) VALUES
-(1, 'admin1', '123456789', 1);
+(1, 'admin1', '03a7c59762560917127839073240be20', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `cart`
+--
+
+CREATE TABLE `cart` (
+  `id_cart` int(11) NOT NULL,
+  `id_khachhang` int(11) NOT NULL,
+  `code_cart` varchar(10) NOT NULL,
+  `cart_status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `cart`
+--
+
+INSERT INTO `cart` (`id_cart`, `id_khachhang`, `code_cart`, `cart_status`) VALUES
+(1, 15, '901', 1),
+(2, 15, '4517', 1),
+(3, 15, '2080', 1),
+(4, 15, '1880', 1),
+(5, 15, '3668', 1),
+(6, 15, '6154', 1),
+(7, 15, '7496', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `cart_details`
+--
+
+CREATE TABLE `cart_details` (
+  `id_cart_details` int(11) NOT NULL,
+  `code_cart` varchar(10) NOT NULL,
+  `id_sanpham` int(11) NOT NULL,
+  `soluong` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `cart_details`
+--
+
+INSERT INTO `cart_details` (`id_cart_details`, `code_cart`, `id_sanpham`, `soluong`) VALUES
+(1, '901', 12, 1),
+(2, '4517', 12, 1),
+(3, '3668', 12, 1),
+(4, '6154', 12, 1);
 
 -- --------------------------------------------------------
 
@@ -107,7 +156,11 @@ CREATE TABLE `sanpham` (
 
 INSERT INTO `sanpham` (`id_sanpham`, `tensanpham`, `masp`, `giasp`, `soluong`, `hinhanh`, `tomtat`, `noidung`, `tinhtrang`, `id_danhmuc`) VALUES
 (10, 'Dược dê', '003', '500000', 3, '1746415941_Screenshot 2025-04-19 193100.png', 'dâdadada', '', 1, 8),
-(11, 'tft', '004', '500000', 1, '1746421070_Screen01.png', 'dâdada', 'dâdadad', 1, 8);
+(11, 'tft', '004', '500000', 1, '1746421070_Screen01.png', 'dâdada', 'dâdadad', 1, 8),
+(12, 'Ntruc', '001', '1000000000', 1, '1746589132_ntruc.jpg', 'dadadadad', 'dadadad', 1, 8),
+(13, 'Ntruc', '002', '1000000000', 1, '1746615663_ntruc.jpg', 'dâdadad', 'adadada', 1, 8),
+(14, 'Ntruc', '003', '1000000000', 1, '1746615676_ntruc.jpg', 'dâdadad', 'adadadad', 1, 8),
+(15, 'Ntruc', '004', '1000000000', 1, '1746615690_ntruc.jpg', 'dadadadada', 'dadadad', 1, 8);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -118,6 +171,18 @@ INSERT INTO `sanpham` (`id_sanpham`, `tensanpham`, `masp`, `giasp`, `soluong`, `
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
+
+--
+-- Chỉ mục cho bảng `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`id_cart`);
+
+--
+-- Chỉ mục cho bảng `cart_details`
+--
+ALTER TABLE `cart_details`
+  ADD PRIMARY KEY (`id_cart_details`);
 
 --
 -- Chỉ mục cho bảng `dangky`
@@ -148,6 +213,18 @@ ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT cho bảng `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `id_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT cho bảng `cart_details`
+--
+ALTER TABLE `cart_details`
+  MODIFY `id_cart_details` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT cho bảng `dangky`
 --
 ALTER TABLE `dangky`
@@ -163,7 +240,7 @@ ALTER TABLE `danhmuc`
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `id_sanpham` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_sanpham` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
