@@ -1,15 +1,17 @@
 <?php
+
     if(isset($_POST['dangky'])){
         $tenkhachhang=$_POST['hovaten'];
         $email=$_POST['email'];
         $dienthoai=$_POST['dienthoai'];
         $diachi=$_POST['diachi'];
         $matkhau=$_POST['matkhau'];
-        $sql_dangky = mysqli_query($mysqli,"INSERT INTO dangky(tenkhachhang,email,diachi,matkhau,dienthoai) VALUES('".$tenkhachhang."','".$email."','".$diachi."','".$matkhau."','".$dienthoai."')");
+        $sql_dangky = mysqli_query($mysqli,"INSERT INTO dangky(tenkhachhang,email,diachi,matkhau,dienthoai) 
+            VALUES('".$tenkhachhang."','".$email."','".$diachi."','".$matkhau."','".$dienthoai."')");
         if($sql_dangky){
             echo '<p style="color:green">Bạn đã đăng ký thành công!</p>';
             $_SESSION['dangky'] = $tenkhachhang;
-
+            
             $_SESSION['id_khachhang'] = $mysqli_insert_id($mysqli);
             header('Location:/Chef-s_choice/index.php?quanly=giohang');
         }

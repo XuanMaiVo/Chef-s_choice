@@ -65,7 +65,7 @@
       </td>
     </tr>
 
-    <tr>
+    <tr> 
       <td></td>
       <td colspan="2"><input type="submit" name="themsanpham" value="Thêm sản phẩm"><!--nút--></td>
     </tr>

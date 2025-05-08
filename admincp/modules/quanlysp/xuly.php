@@ -1,6 +1,19 @@
 <?php 
-include('../../config/config.php');// kết nối database
+include('../../config/config.php');
 
+$tensanpham = $_POST['tensanpham'];
+$masp = $_POST['masp'];
+$giasp = $_POST['giasp'];
+$soluong = $_POST['soluong'] ;
+$hinhanh = $_FILES['hinhanh']['name'];
+$hinhanh_tmp = $_FILES['hinhanh']['tmp_name'];
+$hinhanh = time().'_'.$hinhanh;//đặt tên ảnh theo thời gian
+$tomtat = $_POST['tomtat'];
+$noidung = $_POST['noidung'];
+$tinhtrang = $_POST['tinhtrang'];
+$danhmuc= $_POST['danhmuc'];
+
+//thêm san pham 
 if (isset($_POST['themsanpham'])) {
     $tensanpham = $_POST['tensanpham'];
     $masp = $_POST['masp'];

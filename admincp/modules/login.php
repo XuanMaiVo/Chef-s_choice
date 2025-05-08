@@ -1,18 +1,22 @@
 <?php
     session_start();
-    include('../../admincp/config/config.php');
+    include('../config/config.php');
     if(isset($_POST['dangnhap'])){
         $taikhoan=$_POST['username'];
         $matkhau=($_POST['password']);
+<<<<<<< HEAD
         $sql="SELECT * FROM admin WHERE username='".$taikhoan."' AND password='".$matkhau."' LIMIT 1";
+=======
+        $sql="SELECT * FROM admin WHERE username='$taikhoan' AND password='$matkhau' LIMIT 1";
+>>>>>>> 6945295b5ae05045ba9c2644ce1da623d075eb1f
         $row=mysqli_query($mysqli,$sql);
         $count = mysqli_num_rows($row);
         if($count>0){
             $_SESSION['dangnhap']= $taikhoan;
-            header("Location:/Chef-s_choice/admincp/modules/ad_index.php");
+            header('Location: /Chef-s_choice/admincp/modules/ad_index.php');
         }else{
-            echo '<script>alert("Tài khoản hoặc mật khẩu không đúng.")</script>';
-            header("Location:/Chef-s_choice/admincp/modules/login.php");
+            echo '<script>alert("Tài khoản hoặc mật khẩu không đúng.");</script>';
+            header('Location: /Chef-s_choice/admincp/modules/login.php');
         }
     }
 ?>
