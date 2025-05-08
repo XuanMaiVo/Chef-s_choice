@@ -4,7 +4,7 @@
     }
     $sql_pro = "SELECT * FROM sanpham, danhmuc WHERE sanpham.id_danhmuc=danhmuc.id_danhmuc AND sanpham.tensanpham LIKE '%".$tukhoa."%'";
     $query_pro = mysqli_query($mysqli,$sql_pro);
-    
+     
 ?>
 <h3>Từ khóa tìm kiếm: <?php echo $_POST['tukhoa']?></h3>
     <ul class="product_list">

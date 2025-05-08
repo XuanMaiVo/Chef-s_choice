@@ -13,7 +13,7 @@ $noidung = $_POST['noidung'];
 $tinhtrang = $_POST['tinhtrang'];
 $danhmuc= $_POST['danhmuc'];
 
-//thêm san pham
+//thêm san pham 
 if (isset($_POST['themsanpham'])) {
     $sql_them = "INSERT INTO sanpham(tensanpham,masp,giasp,soluong,hinhanh,tomtat,noidung,tinhtrang,id_danhmuc) VALUES('".$tensanpham."', '".$masp."','".$giasp."','".$soluong."','".$hinhanh."','".$tomtat."','".$noidung."','".$tinhtrang."','".$danhmuc."')";
     mysqli_query($mysqli, $sql_them);
