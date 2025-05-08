@@ -4,7 +4,7 @@
     $query_lietke_sp = mysqli_query($mysqli, $sql_lietke_sp);
 ?>
 
-<p>Liệt kê phẩm</p>
+<p>Liệt kê sản phẩm</p>
 <table style="border: 1px solid black; width: 100%; border-collapse: collapse; text-align:center">
 <tr>
     <th>ID</th>
@@ -22,7 +22,7 @@
 $i = 0;
 while($row = mysqli_fetch_array($query_lietke_sp)){
     $i++;
-?>
+?> 
 <tr>
     <td ><?php echo $i; ?></td>
     <td ><?php echo $row['tensanpham'] ?></td>

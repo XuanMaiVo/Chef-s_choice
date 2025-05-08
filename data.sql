@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 07, 2025 lúc 01:20 PM
+-- Thời gian đã tạo: Th5 07, 2025 lúc 02:14 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.0.30
 
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`, `admin_status`) VALUES
-(1, 'admin1', '03a7c59762560917127839073240be20', 1);
+(1, 'admin1', '12122005', 1);
 
 -- --------------------------------------------------------
 
@@ -54,19 +54,6 @@ CREATE TABLE `cart` (
   `cart_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Đang đổ dữ liệu cho bảng `cart`
---
-
-INSERT INTO `cart` (`id_cart`, `id_khachhang`, `code_cart`, `cart_status`) VALUES
-(1, 15, '901', 1),
-(2, 15, '4517', 1),
-(3, 15, '2080', 1),
-(4, 15, '1880', 1),
-(5, 15, '3668', 1),
-(6, 15, '6154', 1),
-(7, 15, '7496', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -79,16 +66,6 @@ CREATE TABLE `cart_details` (
   `id_sanpham` int(11) NOT NULL,
   `soluong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `cart_details`
---
-
-INSERT INTO `cart_details` (`id_cart_details`, `code_cart`, `id_sanpham`, `soluong`) VALUES
-(1, '901', 12, 1),
-(2, '4517', 12, 1),
-(3, '3668', 12, 1),
-(4, '6154', 12, 1);
 
 -- --------------------------------------------------------
 
@@ -104,13 +81,6 @@ CREATE TABLE `dangky` (
   `matkhau` varchar(100) NOT NULL,
   `dienthoai` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `dangky`
---
-
-INSERT INTO `dangky` (`id_dangky`, `tenkhachhang`, `email`, `diachi`, `matkhau`, `dienthoai`) VALUES
-(15, 'Võ Hoàng Thông', 'thonghoang12005@gmail.com', '1041/94/36 Trần Xuân Soạn', '12122005', '0383704182');
 
 -- --------------------------------------------------------
 
@@ -129,7 +99,8 @@ CREATE TABLE `danhmuc` (
 --
 
 INSERT INTO `danhmuc` (`id_danhmuc`, `ten_danhmuc`, `thutu`) VALUES
-(8, 'Gái xinh', 1);
+(9, 'Dụng cụ', 1),
+(10, 'Gia vị', 2);
 
 -- --------------------------------------------------------
 
@@ -155,12 +126,10 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`id_sanpham`, `tensanpham`, `masp`, `giasp`, `soluong`, `hinhanh`, `tomtat`, `noidung`, `tinhtrang`, `id_danhmuc`) VALUES
-(10, 'Dược dê', '003', '500000', 3, '1746415941_Screenshot 2025-04-19 193100.png', 'dâdadada', '', 1, 8),
-(11, 'tft', '004', '500000', 1, '1746421070_Screen01.png', 'dâdada', 'dâdadad', 1, 8),
-(12, 'Ntruc', '001', '1000000000', 1, '1746589132_ntruc.jpg', 'dadadadad', 'dadadad', 1, 8),
-(13, 'Ntruc', '002', '1000000000', 1, '1746615663_ntruc.jpg', 'dâdadad', 'adadada', 1, 8),
-(14, 'Ntruc', '003', '1000000000', 1, '1746615676_ntruc.jpg', 'dâdadad', 'adadadad', 1, 8),
-(15, 'Ntruc', '004', '1000000000', 1, '1746615690_ntruc.jpg', 'dadadadada', 'dadadad', 1, 8);
+(16, 'Gia vị nấu Bò kho', 'SP000001', '120000', 10, '1746619701_GV-nau-Bo_kho_10g.png', 'bò kho không ngon không ăn', '', 1, 10),
+(17, 'Gia vị nấu Bún bò', 'SP000002', '125000', 10, '1746619754_GV-nau-bun-bo-hue.png', 'bún bò Hóe', '', 1, 10),
+(18, 'Bếp chiên không dầu', 'SP000003', '5000000', 10, '1746619893_bep-chien-khong-dau-4L2.png', 'mắc', 'như tóm tắt th', 1, 9),
+(19, 'Bộ 6 Ly uống rượu vang', 'SP000004', '500000', 10, '1746619954_bo-6-ly-ruou-vang-62cl.png', 'ly khó bể', 'Thái Công gọi bằng cụ', 1, 9);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -234,13 +203,13 @@ ALTER TABLE `dangky`
 -- AUTO_INCREMENT cho bảng `danhmuc`
 --
 ALTER TABLE `danhmuc`
-  MODIFY `id_danhmuc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_danhmuc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `id_sanpham` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_sanpham` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

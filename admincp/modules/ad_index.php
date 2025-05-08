@@ -10,7 +10,7 @@
 <?php
     session_start();
     if(!isset($_SESSION['dangnhap'])){
-        header("Location:/Chef-s_choice/admincp/modules/login.php");
+        header('Location: /Chef-s_choice/admincp/modules/login.php');
     }
 ?>
 <body>

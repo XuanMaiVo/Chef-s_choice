@@ -13,12 +13,12 @@
 
     <tr>
       <td >Giá sp</td>
-      <td><input type="text" name="giasp" ></td>
+      <td><input type="number" name="giasp" ></td>
     </tr>
 
     <tr>
       <td >Số lượng</td>
-      <td><input type="text" name="soluong" ></td>
+      <td><input type="number" name="soluong" ></td>
     </tr>
 
     <tr>
@@ -65,7 +65,7 @@
       </td>
     </tr>
 
-    <tr>
+    <tr> 
       <td></td>
       <td colspan="2"><input type="submit" name="themsanpham" value="Thêm sản phẩm"><!--nút--></td>
     </tr>

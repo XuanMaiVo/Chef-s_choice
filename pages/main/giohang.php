@@ -2,8 +2,9 @@
 <?php
   if(isset($_SESSION['dangky'])){
     echo 'Xin chào: '.'<span style="color:blue">'.$_SESSION['dangky'].'</span>';
+
   }
-?>
+?> 
 </p>
 <table style="width: 100%; text-align: center; border-collapse: collapse; border: 1px solid black;">
   <tr>

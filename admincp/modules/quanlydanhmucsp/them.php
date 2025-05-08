@@ -6,7 +6,7 @@
       <td><input type="text" name="tendanhmuc">
       </td>
     </tr>
-
+ 
     <tr>
       <td>Thứ tự</td><!--Ô thứ tự-->
       <td><input type="text" name="thutu">
