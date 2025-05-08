@@ -9,7 +9,7 @@
     }else{
         $begin=($page-1)*3;
     }
-    $sql_pro = "SELECT * FROM sanpham, danhmuc WHERE sanpham.id_danhmuc= danhmuc.id_danhmuc ORDER BY sanpham.id_sanpham DESC LIMIT $begin,5";
+    $sql_pro = "SELECT * FROM sanpham, danhmuc WHERE sanpham.id_danhmuc= danhmuc.id_danhmuc ORDER BY sanpham.id_sanpham DESC LIMIT $begin,5";// giới hạn sản phẩm trên 1 trang
     $query_pro = mysqli_query($mysqli,$sql_pro);
 ?>
 <h3>Sản phẩm mới nhất</h3>
@@ -59,7 +59,7 @@
     <?php
         $sql_trang=mysqli_query($mysqli,"SELECT * FROM sanpham");
         $row_count=mysqli_num_rows($sql_trang);
-        $trang= ceil($row_count/3);
+        $trang= ceil($row_count/5);//5 sản phẩm mỗi trang
     ?>
         <ul class="list_trang">
             <?php

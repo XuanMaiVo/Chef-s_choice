@@ -32,9 +32,9 @@
     <td><?php echo $cart_item['tensanpham']; ?></td>
     <td><img src="admincp/modules/quanlysp/uploads/<?php echo $cart_item['hinhanh']; ?>" width="150px"></td>
     <td>
-        <a href="pages/main/themgiohang.php?cong=<?php echo $cart_item['id']?>"><i class="fa-solid fa-plus"></i></a>  
-        <?php echo $cart_item['soluong']; ?>
-        <a href="pages/main/themgiohang.php?tru=<?php echo $cart_item['id']?>"><i class="fa-solid fa-minus"></i></a>
+      <a href="pages/main/themgiohang.php?tru=<?php echo $cart_item['id']?>"><i class="fa-solid fa-minus"></i></a>
+      <?php echo $cart_item['soluong']; ?>
+      <a href="pages/main/themgiohang.php?cong=<?php echo $cart_item['id']?>"><i class="fa-solid fa-plus"></i></a>  
     </td>
     <td><?php echo number_format($cart_item['giasp'],0,',','.').'VND' ?></td>
     <td><?php echo number_format($thanhtien,0,',','.').'VND'?></td>
