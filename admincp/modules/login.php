@@ -3,6 +3,7 @@
     include('../config/config.php');
     if(isset($_POST['dangnhap'])){
         $taikhoan=$_POST['username'];
+        $matkhau=$_POST['password'];
         $matkhau=($_POST['password']);
         $sql="SELECT * FROM admin WHERE username='".$taikhoan."' AND password='".$matkhau."' LIMIT 1";
         $sql="SELECT * FROM admin WHERE username='$taikhoan' AND password='$matkhau' LIMIT 1";
