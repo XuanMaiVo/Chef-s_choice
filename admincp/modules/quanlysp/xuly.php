@@ -97,7 +97,7 @@ if (isset($_POST['themsanpham'])) {
     }
 
     // Sửa sản phẩm
-    if($hinhanh !=''){
+    if(!empty($_FILES['hinhanh']['name'])){
         move_uploaded_file($hinhanh_tmp, 'uploads/'.$hinhanh);
         $sql_update = "UPDATE sanpham SET tensanpham='".$tensanpham."', masp='".$masp."', giasp='".$giasp."', 
         soluong='".$soluong."', tomtat='".$tomtat."', noidung='".$noidung."', tinhtrang='".$tinhtrang."' WHERE id_sanpham='$_GET[idsanpham]'";

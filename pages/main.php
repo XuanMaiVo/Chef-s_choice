@@ -4,6 +4,12 @@
     ?>
 <div class="main-content">
     <?php
+?>
+    <p style="font-weight: bold; color: blue;">Xin chào: <?php if(isset($_SESSION['dangky'])){
+    echo $_SESSION['dangky'];} ?>
+    </p>
+
+    <?php
         if(isset($_GET['quanly'])){
             $tam = $_GET['quanly'];
         }else{
@@ -13,7 +19,13 @@
             include("main/danhmuc.php");
         }elseif($tam=='giohang'){
             include("main/giohang.php");
-        }elseif($tam=='tintuc'){
+        }elseif($tam=='danhmucbaiviet'){
+            include("main/danhmucbaiviet.php");
+        }
+        elseif($tam=='baiviet'){
+            include("main/baiviet.php");
+        }
+        elseif($tam=='tintuc'){
             include("main/tintuc.php");
         }elseif($tam=='lienhe'){
             include("main/lienhe.php");
@@ -29,6 +41,8 @@
             include("main/timkiem.php");
         }elseif($tam=='camon'){
             include("main/camon.php");
+        }elseif($tam=='thaydoimatkhau'){
+            include("main/thaydoimatkhau.php");
         }else{
             include("main/index.php");
         }

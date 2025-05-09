@@ -62,12 +62,11 @@ ul.list_menu {
     padding: 0;
     list-style: none;
     margin: 0 auto;
-    width: 30%;
+    width: 80%;
     line-height: 27px;
     display: flex;
-
     align-items: center;
-
+    margin-left: 30px;
 }
 
 ul.list_menu li {
@@ -127,7 +126,7 @@ ul.list_menu li a {
 
 .sidebar {
     border: 1px solid #000066;
-    height: 390px;
+    height: auto;
     width: 20%;
     margin-top: 5px;
     margin-left: 5px;
@@ -145,6 +144,7 @@ ul.list_sidebar {
 ul.list_sidebar li {
     margin: 5px;
     padding: 5px;
+    text-transform: uppercase;
 
 }
 
@@ -209,13 +209,47 @@ p.title_product {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 p.price_product {
     text-align: center;
     color: red;
     font-size: 16px;
     font-weight: bold;
 }
+
+ul.baiviet{
+    margin: 0;
+    padding: auto;
+}
+
+ul.baiviet li {
+    list-style: none;
+}
+p.tomtat_baiviet_chitiet{
+    text-align: left;
+    color: black;
+    font-size: 16px;
+    font-weight: lighter;
+    font-style: italic;
+}
+p.title_baiviet {
+    text-align: center;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+p.tomtat_baiviet{
+    text-align: center;
+    color: #545454;
+    font-size: 16px;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+
 
 .footer {
     border: 1px solid #ff1a8c;

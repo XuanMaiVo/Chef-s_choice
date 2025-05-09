@@ -7,7 +7,7 @@
     if($page==''|| $page==1){
         $begin=0;
     }else{
-        $begin=($page-1)*3;
+        $begin=($page-1)*5;
     }
     $sql_pro = "SELECT * FROM sanpham, danhmuc WHERE sanpham.id_danhmuc= danhmuc.id_danhmuc ORDER BY sanpham.id_sanpham DESC LIMIT $begin,5";
     $query_pro = mysqli_query($mysqli,$sql_pro);

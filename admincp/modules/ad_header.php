@@ -6,5 +6,5 @@
     }
 ?>
 <p><a href="ad_index.php?dangxuat=1">Đăng xuất : <?php if(isset($_SESSION['dangnhap'])){
-        echo $_SESSION['dangnhap'];}
-?></a></p>
+        echo $_SESSION['dangnhap'];} ?>
+</a></p>
