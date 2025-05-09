@@ -1,73 +1,82 @@
-<p>Thêm sản phẩm</p> 
- <table style="border: 1px solid black; width: 50%; border-collapse: collapse;">
-<form method="POST" action="/Chef-s_choice/admincp/modules/quanlysp/xuly.php" enctype="multipart/form-data"><!--Đường dẫn trực tiếp-->
-  <tr>
-      <td>Tên sản phẩm</td>
-      <td><input type="text" name="tensanpham" ></td>
-    </tr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm sản phẩm mới</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Thêm sản phẩm mới</h1>
+        <form method="POST" action="/Chef-s_choice/admincp/modules/quanlysp/xuly.php" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="tensanpham">Tên sản phẩm</label>
+                <input type="text" id="tensanpham" name="tensanpham" required>
+            </div>
 
-    <tr>
-      <td >Mã sp</td>
-      <td><input type="text" name="masp" ></td>
-    </tr>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="masp">Mã sản phẩm</label>
+                    <input type="text" id="masp" name="masp" required>
+                </div>
 
-    <tr>
-      <td >Giá sp</td>
-      <td><input type="number" name="giasp" ></td>
-    </tr>
+                <div class="form-group">
+                    <label for="giasp">Giá sản phẩm</label>
+                    <input type="number" id="giasp" name="giasp" required>
+                </div>
+            </div>
 
-    <tr>
-      <td >Số lượng</td>
-      <td><input type="number" name="soluong" ></td>
-    </tr>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="soluong">Số lượng</label>
+                    <input type="number" id="soluong" name="soluong" required>
+                </div>
 
-    <tr>
-      <td >Hình ảnh</td>
-      <td><input type="file" name="hinhanh" ></td>
-    </tr>
+                <div class="form-group">
+                    <label for="hinhanh">Hình ảnh</label>
+                    <input type="file" id="hinhanh" name="hinhanh" required>
+                </div>
+            </div>
 
-    <tr>
-      <td>Tóm tắt</td>
-      <td><textarea rows="10" width="100%" name="tomtat" style="resize:none"></textarea></td>
-    </tr>
+            <div class="form-group">
+                <label for="tomtat">Tóm tắt</label>
+                <textarea id="tomtat" name="tomtat" required></textarea>
+            </div>
 
-    <tr>
-      <td>Nội dung</td>
-      <td><textarea rows="10" name="noidung"></textarea></td>
-    </tr>
+            <div class="form-group">
+                <label for="noidung">Nội dung</label>
+                <textarea id="noidung" name="noidung" required></textarea>
+            </div>
 
-    <tr>
-      <td >Danh mục sản phẩm</td>
-      <td>
-        <select name="danhmuc">
-          <?php
-          $sql_danhmuc = "SELECT * FROM danhmuc ORDER BY id_danhmuc DESC";
-          $query_danhmuc = mysqli_query($mysqli,$sql_danhmuc);
-          while($row_danhmuc = mysqli_fetch_array($query_danhmuc)){
-            ?>
-            <option value="<?php echo $row_danhmuc['id_danhmuc'] ?>"> 
-              <?php echo $row_danhmuc['ten_danhmuc'] ?> 
-            </option>
-          <?php
-          }
-          ?>
-        </select>
-      </td>
-    </tr>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="danhmuc">Danh mục sản phẩm</label>
+                    <select id="danhmuc" name="danhmuc" required>
+                        <?php
+                        $sql_danhmuc = "SELECT * FROM danhmuc ORDER BY id_danhmuc DESC";
+                        $query_danhmuc = mysqli_query($mysqli,$sql_danhmuc);
+                        while($row_danhmuc = mysqli_fetch_array($query_danhmuc)){
+                        ?>
+                        <option value="<?php echo $row_danhmuc['id_danhmuc'] ?>"> 
+                            <?php echo $row_danhmuc['ten_danhmuc'] ?> 
+                        </option>
+                        <?php
+                        }
+                        ?>
+                    </select>
+                </div>
 
-    <tr>
-      <td >Tình trạng</td>
-      <td>
-        <select name="tinhtrang">
-          <option value="1">Kích hoạt</option>
-          <option value="0">Ẩn</option>
-        </select>
-      </td>
-    </tr>
+                <div class="form-group">
+                    <label for="tinhtrang">Tình trạng</label>
+                    <select id="tinhtrang" name="tinhtrang" required>
+                        <option value="1">Kích hoạt</option>
+                        <option value="0">Ẩn</option>
+                    </select>
+                </div>
+            </div>
 
-    <tr> 
-      <td></td>
-      <td colspan="2"><input type="submit" name="themsanpham" value="Thêm sản phẩm"><!--nút--></td>
-    </tr>
-  </form>
-  </table>
+            <button type="submit" name="themsanpham" class="submit-btn">Thêm sản phẩm</button>
+        </form>
+    </div>
+</body>
+</html>

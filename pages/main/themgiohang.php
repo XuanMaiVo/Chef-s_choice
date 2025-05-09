@@ -65,7 +65,7 @@ if(isset($_GET['xoatatca']) && $_GET['xoatatca'] == 1) {
 }
 //thêm sản phẩm vào cart 
 if(isset($_POST['themgiohang'])){
-        $id=$_GET['idsanpham'];
+    $id=$_GET['idsanpham'];
     $soluong=1;
     $sql ="SELECT * FROM sanpham WHERE id_sanpham='".$id."' LIMIT 1";
     $query = mysqli_query($mysqli,$sql);

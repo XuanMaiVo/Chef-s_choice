@@ -1,11 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="../admin_css/admin.css?v=<?= time(); ?>">
     
+=======
+    <link rel="stylesheet" href="../../css/admin.css">
+>>>>>>> 6d2aaaf4474e8b560008fe6cc619053fde9e94e7
     <title>Admin</title>
 </head>
 <?php

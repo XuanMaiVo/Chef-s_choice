@@ -20,6 +20,7 @@
         ?> -->
 
         <li><a href="index.php?quanly=giohang">Giỏ hàng</a></li>
+<<<<<<< HEAD
 
         <?php if(isset($_SESSION['dangky'])) { 
         ?>
@@ -31,6 +32,8 @@
         <?php
         } ?>
 
+=======
+>>>>>>> 6d2aaaf4474e8b560008fe6cc619053fde9e94e7
         <li><a href="index.php?quanly=tintuc">Tin tức</a></li>
         <li><a href="index.php?quanly=lienhe">Liên hệ</a></li>
 
@@ -40,5 +43,16 @@
                 <input type="submit" name="timkiem" value="Tìm kiếm">
             </form>
         </li>
+
+        <?php if(isset($_SESSION['dangky'])) { 
+        ?>
+        <li><a href="index.php?dangxuat=1">Đăng xuất</a></li>
+        <?php
+        } else { ?>
+        <li><a href="index.php?quanly=dangnhap">Đăng nhập</a></li><!--Thêm nút đăng nhập trên menu-->
+        <li><a href="index.php?quanly=dangky">Đăng ký</a></li>
+        <?php
+        } ?>
+
     </ul>
 </div>
