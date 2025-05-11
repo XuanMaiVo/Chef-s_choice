@@ -6,7 +6,6 @@
         $matkhau=$_POST['password'];
         $matkhau=($_POST['password']);
         $sql="SELECT * FROM admin WHERE username='".$taikhoan."' AND password='".$matkhau."' LIMIT 1";
-        $sql="SELECT * FROM admin WHERE username='$taikhoan' AND password='$matkhau' LIMIT 1";
         $row=mysqli_query($mysqli,$sql);
         $count = mysqli_num_rows($row);
         if($count>0){
@@ -24,7 +23,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập Admincp</title>
-    <style type="text/css">
+    <link rel="stylesheet" href="../../css/loginadmin.css">
+    <!-- <style type="text/css">
     body{
         background:#f2f2f2;
     }
@@ -38,12 +38,12 @@
     table.table-login tr td{
         padding: 5px;
     }
-    </style>
+    </style> -->
 </head>
 <body>
     <div class="wrapper-login">
         <form action="" autocomplete="off" method="POST">
-            <table class="table-login" style="border: 1px solid black; text-align:center; border-collapse:collapse;">
+            <table class="table-login">
         <tr>
             <td colspan="2"><h3>Đăng nhập admin</h3>
         </tr>

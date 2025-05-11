@@ -7,12 +7,12 @@
     if($page==''|| $page==1){
         $begin=0;
     }else{
-        $begin=($page-1)*3;
+        $begin=($page-1)*5;
     }
     $sql_pro = "SELECT * FROM sanpham, danhmuc WHERE sanpham.id_danhmuc= danhmuc.id_danhmuc ORDER BY sanpham.id_sanpham DESC LIMIT $begin,5";// giới hạn sản phẩm trên 1 trang
     $query_pro = mysqli_query($mysqli,$sql_pro);
 ?>
-<h3>Sản phẩm mới nhất:</h3>
+<h3>Sản phẩm mới nhất</h3>
     <ul class="product_list">
         <?php
             while($row= mysqli_fetch_array($query_pro)){
@@ -22,7 +22,7 @@
             <img src="admincp/modules/quanlysp/uploads/<?php echo $row['hinhanh']?>">
             <p class="title_product">Tên sản phẩm: <?php echo $row['tensanpham']?></p>
             <p class="price_product">Giá: <?php echo number_format($row['giasp'],0,',','.').'VND' ?></p>
-            <p style= "text-align: center; color:black"><?php echo $row['ten_danhmuc']?></p>
+            <p style= "text-align: center; color:#d1d1d1"><?php echo $row['ten_danhmuc']?></p>
             </a>
         </li>
         <?php 
@@ -30,29 +30,32 @@
         ?>
     </ul>
     <div style="clear:both;"></div>
-   <style>
-    ul.list_trang {
-        padding: 0;
-        margin: 20px auto; /* Căn giữa và thêm khoảng cách phía trên/dưới */
-        list-style: none;
-        display: flex; /* Sử dụng flexbox */
-        justify-content: center; /* Căn giữa các phần tử con */
-    }
+    <style>
+        ul.list_trang{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+           
+            
+        }
 
-    ul.list_trang li {
-        padding: 5px 13px;
-        margin: 5px;
-        background: burlywood;
-    }
+        ul.list_trang li{
+            float: left;
+            padding: 5px 13px;
+            margin: 5px;
+            background: burlywood;
+            
+        }
 
-    ul.list_trang li a {
-        color: black;
-        text-align: center;
-        text-decoration: none;
-        padding: 5px;
-        margin: 5px;
-    }
-</style>
+        ul.list_trang li a{
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+    <p>Trang: </p>
     <?php
         $sql_trang=mysqli_query($mysqli,"SELECT * FROM sanpham");
         $row_count=mysqli_num_rows($sql_trang);
@@ -67,5 +70,4 @@
             }
             ?>
         </ul>
-    <div style="clear:both;"></div>
     <div class="banner1"></div>

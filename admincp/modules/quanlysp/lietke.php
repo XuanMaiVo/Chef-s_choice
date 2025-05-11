@@ -5,7 +5,7 @@
 ?>
 
 <p>Liệt kê sản phẩm</p>
-<table style="border: 1px solid black; width: 100%; border-collapse: collapse; text-align:center">
+<table>
 <tr>
     <th>ID</th>
     <th>Tên sản phẩm</th>
