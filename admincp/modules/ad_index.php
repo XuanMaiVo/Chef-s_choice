@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="../admin_css/admin.css?v=<?= time(); ?>">
-    
-=======
-    <link rel="stylesheet" href="../../css/admin.css">
->>>>>>> 6d2aaaf4474e8b560008fe6cc619053fde9e94e7
+    <!-- JS cho biểu đồ thống kê -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <title>Admin</title>
 </head>
 <?php
@@ -32,9 +29,34 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 
-    <script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    
+    <script type="text/javascript">
 		CKEDITOR.replace('tomtat');
         CKEDITOR.replace('noidung');
+        CKEDITOR.replace('thongtinlienhe');
 	</script>
+
+    <script type="text/javascript">
+    new Morris.Bar({
+    // ID of the element in which to draw the chart.
+    element: 'chart',
+    // Chart data records -- each entry in this array corresponds to a point on
+    // the chart.
+    data: [
+        { year: '2024-10-12',order: 5, sales: 15000, quantity: 20 },
+        { year: '2024-12-12',order: 5, sales: 15000, quantity: 20 },
+        { year: '2025-01-05',order: 5, sales: 15000, quantity: 20 }
+    ],
+    // The name of the data record attribute that contains x-values.
+    xkey: 'year',
+    // A list of names of data record attributes that contain y-values.
+    ykeys: ['order','sales','quantity'],
+    // Labels for the ykeys -- will be displayed when you hover over the
+    // chart.
+    labels: ['Đơn hàng', 'Doanh thu', 'Số lượng bán ra']
+    });
+</script>
 </body>
 </html>

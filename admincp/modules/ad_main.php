@@ -43,6 +43,9 @@
         elseif( $tam=='quanlybaiviet' && $query =='sua'){
             include("../modules/quanlybaiviet/sua.php");
         }
+        elseif( $tam=='quanlyweb' && $query =='capnhat'){
+            include("../modules/thongtinweb/quanly.php");
+        }
         else{
             include("../modules/dashboard.php");
         }

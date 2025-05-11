@@ -6,10 +6,6 @@
         $matkhau=$_POST['password'];
         $matkhau=($_POST['password']);
         $sql="SELECT * FROM admin WHERE username='".$taikhoan."' AND password='".$matkhau."' LIMIT 1";
-<<<<<<< HEAD
-=======
-        $sql="SELECT * FROM admin WHERE username='$taikhoan' AND password='$matkhau' LIMIT 1";
->>>>>>> 6d2aaaf4474e8b560008fe6cc619053fde9e94e7
         $row=mysqli_query($mysqli,$sql);
         $count = mysqli_num_rows($row);
         if($count>0){

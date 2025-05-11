@@ -21,8 +21,29 @@
     <p>Danh mục: <?php echo $row_chitiet['ten_danhmuc']?></p>
     <p><input class ="themgiohang" name="themgiohang" type="submit" value="Thêm giỏ hàng"></p>
 </div>
-    </form>
+</form>
 </div>
+<div class="clear"></div>
+<!-- END tabs-content -->
+    <div class="tabs">
+        <ul id="tabs-nav">
+            <li><a href="#chitiet">Tóm tắt sản phẩm</a></li>
+            <li><a href="#noidung">Nội dung</a></li>
+            <li><a href="#hinhanh">Hình ảnh</a></li>
+        </ul> <!-- END tabs-nav-->
+
+        <div id="tabs-content">
+            <div id="chitiet" class="tab-content">
+                <?php echo $row_chitiet['tomtat'] ?>
+            </div>
+            <div id="noidung" class="tab-content">
+                <?php echo $row_chitiet['noidung'] ?>
+            </div>
+            <div id="hinhanh" class="tab-content">
+                <img width="100%" src="admincp/modules/quanlysp/uploads/<?php echo $row_chitiet['hinhanh']?>">
+            </div>
+        </div>
+    </div>
 <?php  
     }
 ?>
