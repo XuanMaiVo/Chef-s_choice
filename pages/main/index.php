@@ -13,30 +13,30 @@
     $query_pro = mysqli_query($mysqli,$sql_pro);
 ?>
 <h3>Sản phẩm mới nhất</h3>
-    <ul class="product_list">
+<div class="row">
         <?php
             while($row= mysqli_fetch_array($query_pro)){
         ?>
-        <li>
+        
+        <div class="col-md-2">
             <a href="index.php?quanly=sanpham&id=<?php echo $row['id_sanpham'] ?>">
-            <img src="admincp/modules/quanlysp/uploads/<?php echo $row['hinhanh']?>">
+            <img width="100%" class="img img-responsive" src="admincp/modules/quanlysp/uploads/<?php echo $row['hinhanh']?>">
             <p class="title_product">Tên sản phẩm: <?php echo $row['tensanpham']?></p>
             <p class="price_product">Giá: <?php echo number_format($row['giasp'],0,',','.').'VND' ?></p>
             <p style= "text-align: center; color:#d1d1d1"><?php echo $row['ten_danhmuc']?></p>
             </a>
-        </li>
+        </div>
+        
         <?php 
             }
         ?>
-    </ul>
+    </div>
     <div style="clear:both;"></div>
     <style>
         ul.list_trang{
             padding: 0;
             margin: 0;
-            list-style: none;
-           
-            
+            list-style: none; 
         }
 
         ul.list_trang li{

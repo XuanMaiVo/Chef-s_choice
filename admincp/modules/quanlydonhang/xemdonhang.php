@@ -1,7 +1,7 @@
 <p>Xem đơn hàng</p>
 <!--để in ra màn hình-->
 <?php
-    
+    $code = $_GET['code'];
     $sql_lietke_dh = "SELECT * FROM cart_details, sanpham WHERE cart_details.id_sanpham=sanpham.id_sanpham AND cart_details.code_cart='$_GET[code]' ORDER BY cart_details.id_cart_details  DESC";
     $query_lietke_dh = mysqli_query($mysqli, $sql_lietke_dh);
 ?>

@@ -1,9 +1,13 @@
 <?php
     session_start();
     include('../../admincp/config/config.php');// kết nối database
+    require('../../carbon/autoload.php');
+    use Carbon\Carbon;
+    use Carbon\CarbonInterval;
+    $now = Carbon::now('Asia/Ho_Chi_Minh');
     $id_khachhang=$_SESSION['id_khachhang'];
     $code_order=rand(0,9999);
-    $insert_cart="INSERT INTO cart(id_khachhang,code_cart,cart_status) VALUE('".$id_khachhang."','".$code_order."',1)";
+    $insert_cart="INSERT INTO cart(id_khachhang,code_cart,cart_status,cart_date) VALUE('".$id_khachhang."','".$code_order."',1,'".$now."')";
     $cart_query= mysqli_query($mysqli,$insert_cart);
     if($cart_query){
         //thêm giỏ hàng chi tiết
@@ -14,6 +18,19 @@
             mysqli_query($mysqli,$insert_order_details);
         }
     }
+    $tieude = "Đặt hàng thành công";
+    $noidung = "Cảm ơn bạn đã đặt hàng tại Chef's Choice. Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất. Mã đơn hàng của bạn là: ".$code_order.".";
+    $noidung.= "<h4>Đơn hàng đặt bao gồm: </h4>";
+    
+    foreach($_SESSION['cart'] as $key => $val) {
+        $noidung .= "<ul style='border:1px solid blue; margin:10px;'>
+                     <li>".$val['tensanpham']."</li>
+                     <li>".$val['masp']."</li>
+                     <li>".number_format($val['giasp'], 0, ',', '.')."đ</li>
+                     <li>".$val['soluong']."</li>
+                     </ul>";
+    }
+
     unset($_SESSION['cart']);
     header('Location:/Chef-s_choice/index.php?quanly=camon');
 ?>

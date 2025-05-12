@@ -12,7 +12,7 @@
             echo '<p style="color:green">Bạn đã đăng ký thành công!</p>';
             $_SESSION['dangky'] = $tenkhachhang;
             
-            $_SESSION['id_khachhang'] = $mysqli_insert_id($mysqli);
+            $_SESSION['id_khachhang'] = mysqli_insert_id($mysqli);
             header('Location:/Chef-s_choice/index.php?quanly=giohang');
         }
     }

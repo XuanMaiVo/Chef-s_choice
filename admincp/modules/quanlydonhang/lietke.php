@@ -14,8 +14,10 @@
     <th>Địa chỉ</th>
     <th>Email</th>
     <th>Số điện thoại</th>
-    <th>Tình trạng</th>   
+    <th>Tình trạng</th> 
+    <th>Ngày đặt</th>   
     <th>Quản lý</th>
+    <th>In</th>
     
 </tr>
 <?php
@@ -25,11 +27,11 @@ while($row = mysqli_fetch_array($query_lietke_dh)){
 ?>
 <tr>
     <td><?php echo $i; ?></td>
-    <td><?php echo $row['code_cart']; ?></td>
-    <td><?php echo $row['tenkhachhang']; ?></td>
-    <td><?php echo $row['diachi']; ?></td>
-    <td><?php echo $row['email']; ?></td>
-    <td><?php echo $row['dienthoai']; ?></td>
+    <td><?php echo $row['code_cart'] ?></td>
+    <td><?php echo $row['tenkhachhang'] ?></td>
+    <td><?php echo $row['diachi'] ?></td>
+    <td><?php echo $row['email'] ?></td>
+    <td><?php echo $row['dienthoai'] ?></td>
     <td>
         <?php 
         if ($row['cart_status'] == 1){
@@ -39,8 +41,12 @@ while($row = mysqli_fetch_array($query_lietke_dh)){
         }
         ?>
     </td>
+    <td><?php echo $row['cart_date'] ?></td>
     <td>
         <a href="ad_index.php?action=donhang&query=xemdonhang&code=<?php echo $row['code_cart']; ?>">Xem đơn hàng</a> 
+    </td>
+    <td>
+        <a href="/Chef-s_choice/admincp/modules/quanlydonhang/indonhang.php?code=<?php echo $row['code_cart']; ?>">In đơn hàng</a> 
     </td>
 </tr>
 <?php

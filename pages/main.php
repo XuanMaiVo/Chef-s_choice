@@ -1,7 +1,14 @@
 <div id="main">
-    <?php
-        include("sidebar/sidebar.php");
-    ?>
+    <div class="row">
+
+    
+    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+        <?php
+            include("sidebar/sidebar.php");
+        ?>
+    </div>
+
+    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
 <div class="main-content">
     <?php
 ?>
@@ -43,9 +50,19 @@
             include("main/camon.php");
         }elseif($tam=='thaydoimatkhau'){
             include("main/thaydoimatkhau.php");
-        }else{
+        }elseif($tam=="vanchuyen"){
+                include("main/vanchuyen.php");
+        }elseif($tam=="thongtinthanhtoan"){
+            include("main/thongtinthanhtoan.php");
+        }
+        elseif($tam=="donhangdadat"){
+            include("main/donhangdadat.php");
+        }
+        else{
             include("main/index.php");
         }
             ?>
         </div>
+        </div>
+    </div>
     </div>

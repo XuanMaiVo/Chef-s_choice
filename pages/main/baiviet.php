@@ -5,18 +5,19 @@
 
     $row_title = mysqli_fetch_array($query_pro);
 ?>
+<div class="row">
 <h3>Bài viết: <span style="text-transform: uppercase;"><?php echo $row_title['tenbaiviet']?></span> </h3><!-- nếu chưa có sản phẩm sẽ không hiện tên danh mục-->
-<ul class="baiviet">
         <?php 
             while($row_pro = mysqli_fetch_array($quey_pro_all)){
         ?>
-        <li>
-            <img width="300px" src="admincp/modules/quanlybaiviet/uploads/<?php echo $row_pro['hinhanh']?>">
+        <div class="col-md-3 col-sm-12 col-xs-12">
+            <img width="100%" class="img img-responsive" src="admincp/modules/quanlybaiviet/uploads/<?php echo $row_pro['hinhanh']?>">
             <p class="tomtat_baiviet_chitiet">Tóm tắt: <?php echo $row_pro['tomtat']?></p>
             <p class="noidung_baiviet_chitiet">Nội dung: <?php echo $row_pro['noidung']?></p>
             </a>
-        </li>
+        </div>
         <?php
         }
         ?>
-    </ul>    
+</div>   
+<div style="clear:both;"></div>

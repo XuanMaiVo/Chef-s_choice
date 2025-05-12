@@ -1,5 +1,5 @@
-<div class="sidebar">
-    <h4 style="text-align: center">Danh mục sản phẩm</h4>
+
+    <h4 >Danh mục sản phẩm</h4>
     <ul class="list_sidebar">
         <?php
             $sql_danhmuc = "SELECT * FROM danhmuc ORDER BY id_danhmuc DESC";
@@ -12,7 +12,7 @@
         ?>              
     </ul>
 
-    <h4 style="text-align: center">Danh mục bài viết</h4>
+    <h4 >Danh mục bài viết</h4>
     <ul class="list_sidebar">
         <?php
             $sql_danhmucbv = "SELECT * FROM danhmucbaiviet ORDER BY id_danhmucbaiviet DESC";
@@ -24,4 +24,3 @@
         }
         ?>              
     </ul>
-</div> 

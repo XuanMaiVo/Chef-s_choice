@@ -2,10 +2,24 @@
 <?php
   if(isset($_SESSION['dangky'])){
     echo 'Xin chào: '.'<span style="color:blue">'.$_SESSION['dangky'].'</span>';
-
   }
 ?> 
 </p>
+
+<div class="container">	
+<div class="arrow-steps clearfix">
+  <div class="step current"> <span><a href="index.php?quanly=giohang">Giỏ hàng</a></span> </div>
+          <div class="step"> <span><a href="index.php?quanly=vanchuyen">Vận chuyển</a></span> </div>
+          <div class="step"> <span><a href="index.php?quanly=thongtinthanhtoan">Thanh toán</a></span> </div>
+          <div class="step"> <span><a href="index.php?quanly=donhangdadat">Lịch sử đơn hàng</a></span> </div>
+			</div>
+		<!-- <div class="nav clearfix">
+        <a href="#" class="prev">Previous</a>
+        <a href="#" class="next pull-right">Next</a>
+		</div> -->
+</div>
+</div>
+
 <table style="width: 100%; text-align: center; border-collapse: collapse; border: 1px solid black;">
   <tr>
     <th>ID</th>
