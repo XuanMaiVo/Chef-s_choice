@@ -24,6 +24,7 @@
           <a class="nav-link" href="index.php?quanly=giohang">Giỏ hàng</a>
         </li>
 
+<<<<<<< HEAD
         <li class="nav-item"><a class="nav-link" href="index.php?quanly=tintuc">Tin tức</a></li>
         <li class="nav-item"><a class="nav-link" href="index.php?quanly=lienhe">Liên hệ</a></li>
 
@@ -61,3 +62,32 @@
 </nav>
 
 
+=======
+        <?php while($row_danhmuc = mysqli_fetch_array($query_danhmuc)) { ?>
+        <li><a href="index.php?quanly=danhmucsanpham&id=<?php echo $row_danhmuc['id_danhmuc']?>"><?php echo $row_danhmuc['ten_danhmuc']?></a></li>
+        <?php 
+        } 
+        ?>
+        <li><a href="index.php?quanly=giohang">Giỏ hàng</a></li>
+        <li><a href="index.php?quanly=tintuc">Tin tức</a></li>
+        <li><a href="index.php?quanly=lienhe">Liên hệ</a></li>
+
+        <li class="search-item">
+            <form action="index.php?quanly=timkiem" method="POST" class="search-form">
+                <input type="text" placeholder="Tìm kiếm sản phẩm..." name="tukhoa" required>
+                <input type="submit" name="timkiem" value="Tìm kiếm">
+            </form>
+        </li>
+
+        <div class="login-section">
+            <?php if(isset($_SESSION['dangky'])) { ?>
+            <li><a href="index.php?dangxuat=1">Đăng xuất</a></li>
+            <?php } else { ?>
+            <li><a href="index.php?quanly=dangnhap">Đăng nhập</a></li>
+            <li><a href="index.php?quanly=dangky">Đăng ký</a></li>
+            <?php } ?>
+        </div>
+    </ul>
+</div>
+<div class="banner"></div>
+>>>>>>> 45feeaa47e16814ac877cea39a3d3b199024cec1

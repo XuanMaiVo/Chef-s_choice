@@ -70,3 +70,4 @@
             }
             ?>
         </ul>
+    <div class="banner1"></div>

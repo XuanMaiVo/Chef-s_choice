@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../admin_css/admin.css?v=<?= time(); ?>">
-    <!-- JS cho biểu đồ thống kê -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <link rel="stylesheet" type="text/css" href="../admin_css/admin.css">
     <title>Admin</title>
 </head>
 <?php
@@ -15,7 +13,7 @@
     }
 ?>
 <body>
-    <h3 class="title_admin">Welcome to Admin</h3>
+    <h3 class="title_admin">Quản lý</h3>
     <div class="wrapper">
     <?php
         include('../config/config.php');
